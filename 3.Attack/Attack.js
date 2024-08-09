@@ -12,7 +12,7 @@ const attackABI = JSON.parse(fs.readFileSync(attackAbiPath, 'utf8'));
 
 // Contract addresses
 const raiGotchiAddress = "0x06b669E335ea67e062E3d01169a2CA7985dBAd27";
-const attackAddress = "0xaf949E88f6A393aCC3a322d2b07a55A0fCeF2442";
+const attackAddress = "0x828D456D397B08a19ca87Ad2Cf97598a07bf0D0E";
 
 // Web3 setup
 const rpcURL = process.env.RPC_URL;
