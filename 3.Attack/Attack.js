@@ -82,8 +82,8 @@ async function getPetInfo(petId) {
 
 // Example Usage
 (async () => {
-    const fromPetId = 7; // Replace with actual pet ID
-    const toPetId = 16; // Replace with actual pet ID
+    const fromPetId = 10; // Replace with actual pet ID
+    const toPetId = 5; // Replace with actual pet ID
 
     // Perform attack
     console.log('[INFO] Performing attack...');

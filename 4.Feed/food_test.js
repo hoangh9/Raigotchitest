@@ -130,12 +130,12 @@ async function buyImidiateUseItem(petId, itemId) {
 }
 
 (async () => {
-    const petId = 0; // Replace with actual pet ID
-    const deadPetId = 0; // Replace with actual dead pet ID
-    const foodItemIds = [0, 1, 2]; // Item IDs for food items
-    const revivalItemId = 3; // Item ID for revival item
-    const decorativeItemId = 4; // Item ID for decorative item
-    const approvalAmount = web3.utils.toWei('20000', 'ether'); // Amount to approve
+    const petId = 4; 
+    const deadPetId = 0; 
+    const foodItemIds = [0, 1, 2]; 
+    const revivalItemId = 3; 
+    const decorativeItemId = 4; 
+    const approvalAmount = web3.utils.toWei('20000', 'ether');
 
     // Approve the spending of tokens
     await approveSpending(immidiateUseItemsAddress, approvalAmount);
