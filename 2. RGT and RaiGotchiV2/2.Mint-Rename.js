@@ -12,7 +12,7 @@ const raigotchiTokenABI = JSON.parse(fs.readFileSync(raigotchiTokenAbiPath, 'utf
 const raiGotchiV2ABI = JSON.parse(fs.readFileSync(raiGotchiV2AbiPath, 'utf8'));
 
 const raigotchiTokenAddress = "0x774683C155327424f3d9b12a85D78f410F6E53A1";
-const raiGotchiV2Address = "0x5D31C0fF4AAF1C906B86e65fDd3A17c7087ab1E3";
+const raiGotchiV2Address = "0xBC0bB4773449267bC515b18355d0742E794971Ef";
 
 const rpcURL = process.env.RPC_URL;
 const privateKey = process.env.PRIVATE_KEY;

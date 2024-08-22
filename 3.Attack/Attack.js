@@ -11,8 +11,8 @@ const raiGotchiABI = JSON.parse(fs.readFileSync(raiGotchiAbiPath, 'utf8'));
 const attackABI = JSON.parse(fs.readFileSync(attackAbiPath, 'utf8'));
 
 // Contract addresses
-const raiGotchiAddress = "0x06b669E335ea67e062E3d01169a2CA7985dBAd27";
-const attackAddress = "0x828D456D397B08a19ca87Ad2Cf97598a07bf0D0E";
+const raiGotchiAddress = "0xBC0bB4773449267bC515b18355d0742E794971Ef";
+const attackAddress = "0x6f7c9E80FACBbf1cCA2400d510Dbc0B3cf8C4DC2";
 
 // Web3 setup
 const rpcURL = process.env.RPC_URL;
@@ -82,8 +82,8 @@ async function getPetInfo(petId) {
 
 // Example Usage
 (async () => {
-    const fromPetId = 10; // Replace with actual pet ID
-    const toPetId = 5; // Replace with actual pet ID
+    const fromPetId = 4; // Replace with actual pet ID
+    const toPetId = 3; // Replace with actual pet ID
 
     // Perform attack
     console.log('[INFO] Performing attack...');

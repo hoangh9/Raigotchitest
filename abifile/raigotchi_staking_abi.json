@@ -3,11 +3,6 @@
         "inputs": [
             {
                 "internalType": "address",
-                "name": "_raiGotchiNFT",
-                "type": "address"
-            },
-            {
-                "internalType": "address",
                 "name": "_raiGotchiNFTItem",
                 "type": "address"
             },
@@ -119,56 +114,6 @@
         "inputs": [
             {
                 "indexed": false,
-                "internalType": "uint256",
-                "name": "nftId",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "internalType": "uint256",
-                "name": "poolId",
-                "type": "uint256"
-            }
-        ],
-        "name": "PetStaked",
-        "type": "event"
-    },
-    {
-        "anonymous": false,
-        "inputs": [
-            {
-                "indexed": false,
-                "internalType": "uint256",
-                "name": "nftId",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "internalType": "uint256",
-                "name": "poolId",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "internalType": "uint256[]",
-                "name": "rewardItems",
-                "type": "uint256[]"
-            },
-            {
-                "indexed": false,
-                "internalType": "uint256",
-                "name": "rewardToken",
-                "type": "uint256"
-            }
-        ],
-        "name": "PetUnstaked",
-        "type": "event"
-    },
-    {
-        "anonymous": false,
-        "inputs": [
-            {
-                "indexed": false,
                 "internalType": "address",
                 "name": "owner",
                 "type": "address"
@@ -201,6 +146,18 @@
             {
                 "indexed": false,
                 "internalType": "uint256",
+                "name": "rewardNFTId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "pricePerSlot",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
                 "name": "stakingStartTime",
                 "type": "uint256"
             },
@@ -214,12 +171,6 @@
                 "indexed": false,
                 "internalType": "uint256",
                 "name": "maxSlotsInPool",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "internalType": "uint256",
-                "name": "tokenRewardPerSlot",
                 "type": "uint256"
             },
             {
@@ -243,6 +194,50 @@
             }
         ],
         "name": "Unpaused",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "poolId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "user",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "rewardItems",
+                "type": "uint256"
+            }
+        ],
+        "name": "UserClaimStake",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "poolId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "user",
+                "type": "address"
+            }
+        ],
+        "name": "UserStaked",
         "type": "event"
     },
     {
@@ -328,9 +323,14 @@
                 "type": "string"
             },
             {
-                "internalType": "uint256[]",
-                "name": "_rewardNFTIds",
-                "type": "uint256[]"
+                "internalType": "uint256",
+                "name": "_rewardNFTId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_pricePerSlot",
+                "type": "uint256"
             },
             {
                 "internalType": "uint256",
@@ -349,11 +349,6 @@
             },
             {
                 "internalType": "uint256",
-                "name": "_tokenRewardPerSlot",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
                 "name": "_maxSlotPerWallet",
                 "type": "uint256"
             }
@@ -361,30 +356,6 @@
         "name": "createNewStakingPool",
         "outputs": [],
         "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "isPetStakedInPool",
-        "outputs": [
-            {
-                "internalType": "bool",
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -515,19 +486,6 @@
         "type": "function"
     },
     {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "_poolId",
-                "type": "uint256"
-            }
-        ],
-        "name": "ownerWithdrawRedundantToken",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
         "inputs": [],
         "name": "pause",
         "outputs": [],
@@ -590,6 +548,16 @@
             },
             {
                 "internalType": "uint256",
+                "name": "rewardNFTId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "pricePerSlot",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
                 "name": "stakingStartTime",
                 "type": "uint256"
             },
@@ -605,11 +573,6 @@
             },
             {
                 "internalType": "uint256",
-                "name": "tokenRewardPerSlot",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
                 "name": "maxSlotPerWallet",
                 "type": "uint256"
             },
@@ -617,32 +580,6 @@
                 "internalType": "uint256",
                 "name": "totalStakedSlot",
                 "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "pricePerSlot",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "raiGotchiNFT",
-        "outputs": [
-            {
-                "internalType": "contract IRaiGotchi",
-                "name": "",
-                "type": "address"
             }
         ],
         "stateMutability": "view",
@@ -705,19 +642,6 @@
         "inputs": [
             {
                 "internalType": "uint256",
-                "name": "_pricePerSlot",
-                "type": "uint256"
-            }
-        ],
-        "name": "setPricePerSlot",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
                 "name": "_token",
                 "type": "uint256"
             }
@@ -731,11 +655,6 @@
         "inputs": [
             {
                 "internalType": "uint256",
-                "name": "_nftId",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
                 "name": "_poolId",
                 "type": "uint256"
             }
@@ -743,25 +662,6 @@
         "name": "stake",
         "outputs": [],
         "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "stakedPetOwner",
-        "outputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -865,11 +765,6 @@
         "inputs": [
             {
                 "internalType": "uint256",
-                "name": "_nftId",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
                 "name": "_poolId",
                 "type": "uint256"
             }
@@ -892,7 +787,7 @@
                 "type": "uint256"
             }
         ],
-        "name": "userStakedPetCount",
+        "name": "userStakedCount",
         "outputs": [
             {
                 "internalType": "uint256",

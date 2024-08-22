@@ -17,7 +17,7 @@ const tokenABI = JSON.parse(fs.readFileSync(tokenAbiPath, 'utf8')); // Thêm ABI
 // Contract addresses
 const raiGotchiAddress = "0x5D31C0fF4AAF1C906B86e65fDd3A17c7087ab1E3";
 const raiGotchiItemAddress = "0xDf07437B8b9f72f3061eD02393CCa63d7388397c";
-const stakingAddress = "0x68f40eDC30981d21eBD8a5d1183d1D64C51Ddf79";
+const stakingAddress = "0xE5575c7e6428e5c61b8564E39c489175aa6ACfdE";
 const tokenAddress = "0x774683C155327424f3d9b12a85D78f410F6E53A1"; // Địa chỉ hợp đồng token
 
 // Web3 setup

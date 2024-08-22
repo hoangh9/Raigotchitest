@@ -13,8 +13,8 @@ const immidiateUseItemsABI = JSON.parse(fs.readFileSync(immidiateUseItemsAbiPath
 const tokenABI = JSON.parse(fs.readFileSync(tokenAbiPath, 'utf8')); // Thêm ABI của hợp đồng token
 
 // Contract addresses
-const raiGotchiAddress = "0x5D31C0fF4AAF1C906B86e65fDd3A17c7087ab1E3";
-const immidiateUseItemsAddress = "0x0beA242D563fc68f47FDf0A6444DaF701b80F013";
+const raiGotchiAddress = "0xBC0bB4773449267bC515b18355d0742E794971Ef";
+const immidiateUseItemsAddress = "0x09dE188d7C5437aE2f748fdf4845cfe806130Be7";
 const tokenAddress = "0x774683C155327424f3d9b12a85D78f410F6E53A1"; // Địa chỉ hợp đồng token
 
 // Web3 setup
@@ -132,7 +132,7 @@ async function buyImidiateUseItem(petId, itemId) {
 (async () => {
     const petId = 4; 
     const deadPetId = 0; 
-    const foodItemIds = [0, 1, 2]; 
+    const foodItemIds = [2]; 
     const revivalItemId = 3; 
     const decorativeItemId = 4; 
     const approvalAmount = web3.utils.toWei('20000', 'ether');
@@ -167,6 +167,7 @@ async function buyImidiateUseItem(petId, itemId) {
         console.log ("\n\n-------------------------------------------------\n\n")
     }
 
+    /*
     // Test revival item on a dead pet
     const alive = await isPetAlive(deadPetId);
     if (!alive) {
@@ -199,4 +200,5 @@ async function buyImidiateUseItem(petId, itemId) {
     await buyImidiateUseItem(petId, decorativeItemId);
     console.log(`[INFO] Pet ${petId} Info after using decorative item ${decorativeItemId}:`);
     const petInfoAfter = await getPetInfo(petId);
+    */
 })();
